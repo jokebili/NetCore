@@ -1,0 +1,87 @@
+POST http://localhost:4000/api/v1.0/books HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:4000
+Content-Length: 79
+Content-Type: application/json
+token: abc
+
+{"bookName":"adfaf", "price":22.22, "category":"kdfjkdfj", "author":"kdfjkdjf"}
+HTTP/1.1 200 OK
+Date: Wed, 27 Mar 2019 04:43:05 GMT
+Content-Type: application/json; charset=utf-8
+Server: Kestrel
+Transfer-Encoding: chunked
+
+96
+{"_id":"5c9aff597c45ec0dc031af97","bookName":"adfaf","price":22.22,"category":"kdfjkdfj","author":"kdfjkdjf","releaseDate":"2019-03-27T12:43:05.899Z"}
+0
+
+
+
+------------------------------------------------------------------
+
+GET http://localhost:4000/api/v1.0/books?skip=3&limit=3 HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:4000
+Content-Length: 0
+token: abc
+
+
+HTTP/1.1 200 OK
+Date: Wed, 27 Mar 2019 05:16:25 GMT
+Content-Type: application/json; charset=utf-8
+Server: Kestrel
+Transfer-Encoding: chunked
+
+182
+[{"_id":"5c9aff597c45ec0dc031af94","bookName":"adfaf","price":22.22,"author":"kdfjkdjf","releaseDate":"2019-03-27T12:43:05.48Z"},{"_id":"5c9aff597c45ec0dc031af93","bookName":"adfaf","price":22.22,"author":"kdfjkdjf","releaseDate":"2019-03-27T12:43:05.31Z"},{"_id":"5c9aff597c45ec0dc031af92","bookName":"adfaf","price":22.22,"author":"kdfjkdjf","releaseDate":"2019-03-27T12:43:05.166Z"}]
+0
+
+
+
+------------------------------------------------------------------
+
+PUT http://localhost:4000/api/v1.0/books/5c9aff597c45ec0dc031af97 HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:4000
+Content-Length: 120
+Content-Type: application/json
+token: abc
+
+{"bookName":"这是一本书sadfdsf", "price":60, "category":"人生感dsf情11111", "author":"应该asdfadsf震地地"}
+HTTP/1.1 200 OK
+Date: Wed, 27 Mar 2019 06:22:17 GMT
+Content-Type: application/json; charset=utf-8
+Server: Kestrel
+Transfer-Encoding: chunked
+
+22
+{"ok":true,"change":1,"data":null}
+0
+
+
+
+------------------------------------------------------------------
+
+DELETE http://localhost:4000/api/v1.0/books/5c9aff597c45ec0dc031af97 HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:4000
+Content-Length: 0
+Content-Type: application/json
+token: abc
+
+
+HTTP/1.1 200 OK
+Date: Wed, 27 Mar 2019 06:24:55 GMT
+Content-Type: application/json; charset=utf-8
+Server: Kestrel
+Transfer-Encoding: chunked
+
+22
+{"ok":true,"change":1,"data":null}
+0
+
+
+
+------------------------------------------------------------------
+
